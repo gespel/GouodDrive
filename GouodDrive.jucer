@@ -13,8 +13,8 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="vw6rVL" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
-    <FILE id="xzKxEn" name="knob.png" compile="0" resource="1" file="../../../Downloads/Neuer Knob/0.5x/knob.png"/>
-    <FILE id="Iui87T" name="bg.png" compile="0" resource="1" file="../../../Downloads/Background Gouod Drive/0.5x/bg.png"/>
+    <FILE id="f2xNjr" name="bg.png" compile="0" resource="1" file="bg.png"/>
+    <FILE id="hhc300" name="knob.png" compile="0" resource="1" file="knob.png"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
