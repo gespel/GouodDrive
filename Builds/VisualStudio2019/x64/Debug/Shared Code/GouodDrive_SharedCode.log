@@ -1,0 +1,38 @@
+﻿  PluginEditor.cpp
+  PluginProcessor.cpp
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(19,1): warning C4244: "*=": Konvertierung von "double" in "int", möglicher Datenverlust
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(20,1): warning C4244: "*=": Konvertierung von "double" in "int", möglicher Datenverlust
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(26,24): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(28,1): warning C4305: "=": Verkürzung von "double" in "float"
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(17,94): warning C4100: "slider": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(17,70): warning C4100: "rotaryEndAngle": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(17,40): warning C4100: "rotaryStartAngle": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(16,52): warning C4100: "y": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(16,45): warning C4100: "x": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(21,13): warning C4189: "radius": Lokale Variable ist initialisiert aber nicht referenziert
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(23,13): warning C4189: "centreY": Lokale Variable ist initialisiert aber nicht referenziert
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(44,1): warning C4996: 'juce::ScopedPointer<GALookAndFeel>::~ScopedPointer': wurde als veraltet deklariert
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(84): warning C4996: 'juce::ScopedPointer<GALookAndFeel>::~ScopedPointer': wurde als veraltet deklariert
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(99,46): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(100,50): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(101,46): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginEditor.cpp(97,65): warning C4100: "slider": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(80,55): warning C4100: "index": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(84,66): warning C4100: "index": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(89,82): warning C4100: "newName": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(89,55): warning C4100: "index": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(149,50): warning C4244: "=": Konvertierung von "double" in "Type", möglicher Datenverlust
+          with
+          [
+              Type=float
+          ]
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(154,50): warning C4244: "=": Konvertierung von "double" in "Type", möglicher Datenverlust
+          with
+          [
+              Type=float
+          ]
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(134,98): warning C4100: "midiMessages": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(175,72): warning C4100: "destData": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(182,75): warning C4100: "sizeInBytes": Unreferenzierter formaler Parameter
+C:\Users\stenh\AndroidStudioProjects\GouodDrive\Source\PluginProcessor.cpp(182,65): warning C4100: "data": Unreferenzierter formaler Parameter
+  GouodDrive_SharedCode.vcxproj -> C:\Users\stenh\AndroidStudioProjects\GouodDrive\Builds\VisualStudio2019\x64\Debug\Shared Code\GouodDrive.lib

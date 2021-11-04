@@ -19,7 +19,7 @@ GouodDriveAudioProcessor::GouodDriveAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       ),filter(juce::dsp::IIR::Coefficients<float>::makeLowPass(getSampleRate(), 200.f))
+                       ),filter(juce::dsp::IIR::Coefficients<float>::makeLowPass(getSampleRate(), 200.f)), filter2(juce::dsp::IIR::Coefficients<float>::makeLowPass(getSampleRate(), 200.f))
 #endif
 {
 }
@@ -98,6 +98,7 @@ void GouodDriveAudioProcessor::prepareToPlay (double sampleRate, int samplesPerB
     spec.numChannels = getTotalNumInputChannels();
     spec.maximumBlockSize = samplesPerBlock;
     filter.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
+    filter2.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
 }
 
 void GouodDriveAudioProcessor::releaseResources()
@@ -141,17 +142,22 @@ void GouodDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
-        for(int sample = 0; sample < buffer.getNumSamples(); sample++) {
-            channelData[sample] = 2/M_PI * atan(channelData[sample]*gain);
-            channelData[sample] *= output;
-            channelData[sample] = filter.processSample(channelData[sample]);
-        }
-        filter.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
+
+    auto* channelDataL = buffer.getWritePointer(0);
+    auto* channelDataR = buffer.getWritePointer(1);
+    for (int sample = 0; sample < buffer.getNumSamples(); sample++) {
+        channelDataL[sample] = 2 / 3.14159265359 * atan(channelDataL[sample] * gain);
+        channelDataL[sample] *= output;
+        channelDataL[sample] = filter.processSample(channelDataL[sample]);
+        channelDataL[sample] = filter2.processSample(channelDataL[sample]);
+
+        channelDataR[sample] = 2 / 3.14159265359 * atan(channelDataR[sample] * gain);
+        channelDataR[sample] *= output;
+        channelDataR[sample] = filter.processSample(channelDataR[sample]);
+        channelDataR[sample] = filter2.processSample(channelDataR[sample]);
     }
+    filter.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
+    filter2.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
 }
 
 //==============================================================================

@@ -61,5 +61,6 @@ private:
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (GouodDriveAudioProcessor)
     juce::dsp::IIR::Filter<float> filter;
+    juce::dsp::IIR::Filter<float> filter2;
     juce::dsp::IIR::Coefficients<float>::Ptr coff;
 };

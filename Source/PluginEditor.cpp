@@ -20,14 +20,14 @@ public:
         height *= 0.7;
         int radius = jmin(width, height);
         int centreX = int(width / 2)+22;
-        int centreY = int(height / 2)-10;
+        int centreY = int(height / 2);
         float ventilCentreX = float(knob.getWidth()) * .5f;
         float ventilCentreY = float(knob.getHeight()) * .5f;
-        float rotation = (MathConstants<float>::twoPi * sliderPos)-2.3;
+        float rotation = (MathConstants<float>::twoPi * sliderPos) - 2.3;
         if(rotation > 2.2) {
             rotation = 2.2;
         }
-        knob = knob.rescaled(radius, radius, Graphics::ResamplingQuality::highResamplingQuality);
+        //knob = knob.rescaled(radius, radius, Graphics::ResamplingQuality::highResamplingQuality);
 
         AffineTransform transform;
         float centreImage = float(centreX) - ventilCentreX;
@@ -49,7 +49,7 @@ GouodDriveAudioProcessorEditor::GouodDriveAudioProcessorEditor (GouodDriveAudioP
     
     sliderOutput.setRange(0, 5, 0.01);
     sliderGain.setRange(0.1, 300, 0.01);
-    sliderTone.setRange(0, 8000, 0.01);
+    sliderTone.setRange(20, 22000, 0.01);
     
     sliderOutput.setTextBoxStyle(Slider::NoTextBox, true, 100, 25);
     sliderGain.setTextBoxStyle(Slider::NoTextBox, true, 100, 25);
@@ -103,7 +103,7 @@ void GouodDriveAudioProcessorEditor::sliderValueChanged(Slider* slider)
 
 void GouodDriveAudioProcessorEditor::resized()
 {
-    sliderGain.setBounds(120, 150, 120, 130);
-    sliderOutput.setBounds(193, 285, 120, 130);
-    sliderTone.setBounds(50, 285, 120, 130);
+    sliderGain.setBounds(120, 140, 120, 130);
+    sliderOutput.setBounds(193, 275, 120, 130);
+    sliderTone.setBounds(50, 275, 120, 130);
 }
