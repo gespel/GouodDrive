@@ -63,4 +63,5 @@ private:
     juce::dsp::IIR::Filter<float> filter;
     juce::dsp::IIR::Filter<float> filter2;
     juce::dsp::IIR::Coefficients<float>::Ptr coff;
+    juce::dsp::Chorus<float> ch;
 };

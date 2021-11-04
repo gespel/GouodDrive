@@ -97,6 +97,15 @@ void GouodDriveAudioProcessor::prepareToPlay (double sampleRate, int samplesPerB
     spec.sampleRate = sampleRate;
     spec.numChannels = getTotalNumInputChannels();
     spec.maximumBlockSize = samplesPerBlock;
+
+    ch = juce::dsp::Chorus<float>::Chorus();
+    ch.setRate(4);
+    ch.setDepth(0.8);
+    ch.setCentreDelay(50);
+    ch.setFeedback(0.5);
+    ch.setMix(1);
+    ch.prepare(spec);
+
     filter.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
     filter2.coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass(getSampleRate(), tone);
 }
@@ -141,8 +150,8 @@ void GouodDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
 
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
-
-
+    juce::dsp::ProcessContextReplacing<float> context(block);
+    ch.process(context);
     auto* channelDataL = buffer.getWritePointer(0);
     auto* channelDataR = buffer.getWritePointer(1);
     for (int sample = 0; sample < buffer.getNumSamples(); sample++) {
